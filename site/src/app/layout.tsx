@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Orbitron, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -37,6 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${orbitron.variable} h-full antialiased`}>
+      <Script
+        id="hs-script-loader"
+        src="//js-na2.hs-scripts.com/246141089.js"
+        strategy="afterInteractive"
+        async
+        defer
+      />
       <body className="min-h-full">{children}</body>
     </html>
   );
